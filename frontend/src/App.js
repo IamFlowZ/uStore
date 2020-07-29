@@ -13,7 +13,10 @@ function App() {
         <Typography
           position="static"
           style={{
-            width: "10%",
+            // width: "7%",
+            padding: "0.25rem",
+            color: "#3385ff",
+            backgroundColor: "white",
             margin: "1rem 0 1rem 2rem",
             WebkitTextStroke: "1px black",
             fontFamily: "Permanent Marker",
