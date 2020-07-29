@@ -13,16 +13,97 @@ const DisplayGrid = () => {
       }}
     >
       <Paper style={{ width: "100%" }}>
-        <Grid container spacing={3}>
-          <UploadCard />
-          <UploadCard />
-          <UploadCard />
-          <UploadCard />
-          <UploadCard />
-          <UploadCard />
-          <UploadCard />
-          <UploadCard />
-          <UploadCard />
+        <Grid container>
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
+          <UploadCard
+            title="Hello there"
+            description="This is the description."
+            uploadDate="01/21/20"
+          />
         </Grid>
       </Paper>
     </div>

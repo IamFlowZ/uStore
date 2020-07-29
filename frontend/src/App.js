@@ -12,7 +12,13 @@ function App() {
       <AppBar style={{ flexDirection: "row" }}>
         <Typography
           position="static"
-          style={{ width: "10%", margin: "1rem 0 1rem 2rem" }}
+          style={{
+            width: "10%",
+            margin: "1rem 0 1rem 2rem",
+            WebkitTextStroke: "1px black",
+            fontFamily: "Permanent Marker",
+          }}
+          variant="h4"
         >
           uStore
         </Typography>
