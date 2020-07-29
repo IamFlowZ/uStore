@@ -24,6 +24,9 @@ provider:
   name: aws
   runtime: nodejs12.x
 
+custom:
+  filesBucketName: ustore-files
+
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
@@ -49,17 +52,33 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
+package:
+  include:
+    - src/**
 #  exclude:
 #    - exclude-me.js
 #    - exclude-me-dir/**
 
 functions:
   hello:
-    handler: handler.hello
+    handler: src/handler.hello
+  uploadFile:
+    handler: src/upload-handler.handler
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - s3:PutObject
+        Resource: arn:aws:s3:::${self:custom.filesBucketName}*
+      - Effect: Allow
+        Action:
+          - dynamodb:Query
+          - dynamodb:Scan
+          - dynamodb:GetItem
+          - dynamodb:PutItem
+          - dynamodb:UpdateItem
+        Resource: arn:aws:dynamodb:${self:provider.region}:${self:custom.awsAccountId}:table/${cf:${self:custom.infraStack}.DynamoDBTablePrefix}*
+      - Effect: Allow
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
@@ -111,3 +130,15 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+resources:
+  Resources:
+    PhotosBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: !Sub ‘${self:custom.filesBucketName}’
+        AccessControl: Private
+        CorsConfiguration:
+          CorsRules:
+            - AllowedHeaders: [‘*’]
+              AllowedMethods: [‘PUT’]
+              AllowedOrigins: [‘*’]
